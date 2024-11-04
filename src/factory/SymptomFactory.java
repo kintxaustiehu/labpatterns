@@ -17,8 +17,8 @@ public class SymptomFactory {
 	private static final List<Double> index5 = Arrays.asList(87.9, 67.7, 38.1, 33.4);
 	private static final List<String> impact3 = Arrays.asList("disnea", "dolor de garganta", "cefalea","mialgia","escalofrios");
 	private static final List<Double> index3 = Arrays.asList(18.6, 13.9, 13.6, 14.8, 11.4);
-	private static final List<String> impact1 = Arrays.asList("nauseas", "vómitos", "congestión nasal","diarrea","hemoptisis","congestion conjuntival");
-	private static final List<Double> index1 = Arrays.asList(5.0, 4.8, 3.7, 0.9, 0.8);
+	private static final List<String> impact1 = Arrays.asList("nauseas", "vómitos", "congestión nasal","diarrea","hemoptisis","congestion conjuntival", "mareos");
+	private static final List<Double> index1 = Arrays.asList(5.0, 4.8, 3.7, 0.9, 0.8, 0.5);
 
 	private static final List<String> digestiveSymptom = Arrays.asList("nauseas", "vómitos", "diarrea");
 	private static final List<String> neuroMuscularSymptom = Arrays.asList("fiebre", "astenia", "cefalea", "mialgia", "escalofrios");
