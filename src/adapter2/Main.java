@@ -20,7 +20,6 @@ public class Main {
 		
 		Covid19Pacient pacient2 = new Covid19Pacient("koldo", 23);
 		pacient2.addSymptomByName("nauseas", 6);
-		pacient2.addSymptomByName("mareos", 1);
 		
 		patients.add(pacient2);
 		
