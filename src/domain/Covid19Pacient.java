@@ -57,7 +57,7 @@ public class Covid19Pacient {
 		symptoms.put(c, w);
 	}
 
-	public Symptom addSymptomByName(String symptom, Integer w) {
+	public Symptom addSymptomByName(String symptom, Integer w) throws Exception {
 		Symptom s = getSymptomByName(symptom);
 		if (s == null) {
 			s = SymptomFactory.createSymptom(symptom);

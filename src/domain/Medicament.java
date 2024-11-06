@@ -22,7 +22,7 @@ public class Medicament {
 		this.name = name;
 	}
 
-	public Symptom addSymptomByName(String symptom) {
+	public Symptom addSymptomByName(String symptom) throws Exception {
 		Symptom s2 = null;
 		Symptom s = getSymptomByName(symptom);
 		if (s == null) {

@@ -1,5 +1,6 @@
 package factory;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +12,7 @@ import domain.RespiratorySymptom;
 import domain.Symptom;
 
 public class SymptomFactory {
-	private static final Map<String, Symptom> symptomsCache = new HashMap<>();
+	private static final List<String> symptomsCache = new ArrayList<>();
 	
 	private static final List<String> impact5 = Arrays.asList("fiebre", "tos seca", "astenia","expectoracion");
 	private static final List<Double> index5 = Arrays.asList(87.9, 67.7, 38.1, 33.4);
@@ -24,9 +25,9 @@ public class SymptomFactory {
 	private static final List<String> neuroMuscularSymptom = Arrays.asList("fiebre", "astenia", "cefalea", "mialgia", "escalofrios");
 	private static final List<String> respiratorySymptom = Arrays.asList("tos seca", "expectoracion", "disnea", "dolor de garganta", "congestión nasal", "hemoptisis", "congestion conjuntival");
 
-    public static Symptom createSymptom(String symptomName) {
-        if (symptomsCache.containsKey(symptomName)) {
-            return symptomsCache.get(symptomName);
+    public static Symptom createSymptom(String symptomName) throws Exception {
+        if (symptomsCache.contains(symptomName)) {
+            throw new Exception("Only one instance for this symptom is allowed");
         }
 
         Symptom symptom = null;
@@ -56,7 +57,7 @@ public class SymptomFactory {
         }
 
         if (symptom != null) {
-            symptomsCache.put(symptomName, symptom);
+            symptomsCache.add(symptomName);
         }
 
         return symptom;
