@@ -1,8 +1,12 @@
 package adapter2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.table.AbstractTableModel;
 
 import domain.Covid19Pacient;
+import domain.Symptom;
 
 public class Covid19PacientTableModelAdapter extends AbstractTableModel {
 	protected Covid19Pacient pacient;
@@ -13,22 +17,24 @@ public class Covid19PacientTableModelAdapter extends AbstractTableModel {
 	}
 
 	public int getColumnCount() {
-		// Challenge!
-		return 1;
+		return columnNames.length;
 	}
 
 	public String getColumnName(int i) {
-		// Challenge!
-		return "Column name 1";
+		return columnNames[i];
 	}
 
 	public int getRowCount() {
-		// Challenge!
-		return 1;
+		return this.pacient.getSymptoms().size();
 	}
 
 	public Object getValueAt(int row, int col) {
-		// Challenge!
-		return "value";
+		List<Symptom> symptomList = new ArrayList<>(this.pacient.getSymptoms());
+		Symptom symp = symptomList.get(row);
+		
+		if(col == 0) return symp.getName();
+		if(col == 1) return symp.getCovidImpact();
+		
+		return null;
 	}
 }
