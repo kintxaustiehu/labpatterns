@@ -16,18 +16,22 @@ public class Covid19PacientTableModelAdapter extends AbstractTableModel {
 		this.pacient = p;
 	}
 
+	@Override
 	public int getColumnCount() {
 		return columnNames.length;
 	}
 
+	@Override
 	public String getColumnName(int i) {
 		return columnNames[i];
 	}
 
+	@Override
 	public int getRowCount() {
 		return this.pacient.getSymptoms().size();
 	}
 
+	@Override
 	public Object getValueAt(int row, int col) {
 		List<Symptom> symptomList = new ArrayList<>(this.pacient.getSymptoms());
 		Symptom symp = symptomList.get(row);
