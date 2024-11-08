@@ -99,11 +99,18 @@ public class  MedicalGUI extends JFrame {
 		Symptom s;
 		
 		  if (m.getSymptomByName(symptomName)==null) {
-				s=m.addSymptomByName(symptomName);
-				if (s!=null) {
-					errorLabel.setText("<html>Symptom added: <b>"+symptomName+"</b></html>");
-					reportLabel.setText(createReport());
-				} else errorLabel.setText("<html>ERROR, Symptom <b>"+symptomName+ "</b> does not exist </html>");
+				try {
+					s=m.addSymptomByName(symptomName);
+
+					if (s!=null) {
+						errorLabel.setText("<html>Symptom added: <b>"+symptomName+"</b></html>");
+						reportLabel.setText(createReport());
+					} else errorLabel.setText("<html>ERROR, Symptom <b>"+symptomName+ "</b> does not exist </html>");
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		  } 
 		  else errorLabel.setText("<html>ERROR, Symptom <b>"+symptomName+"</b> already assigned</html> ");
 		  
